@@ -19,9 +19,9 @@ A = np.array([[0, 1],
               [g / L, 0]])
 B = np.array([[0],
               [1 / (m * L ** 2)]])
-poles = np.array([-2 + 2j, -2 - 2j])
+poles = np.array([-9, -20])
 K = -place(A, B, poles)
-
+print(np.linalg.eigvals(A - B @ K))
 physicsClient = p.connect(p.GUI if guiFlag else p.DIRECT)
 p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0, 0, -g)
